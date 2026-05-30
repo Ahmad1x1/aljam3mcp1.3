@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aljam3-mcp-server"
+version = "0.1.0"
+description = "MCP Server for Aljam3 Digital Library API"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "MCP Server", email = "mcp@example.com"},
+]
+keywords = ["mcp", "server", "aljam3", "digital-library"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.25.0",
+]
+
+[project.scripts]
+aljam3-mcp-server = "server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["server.py"]
